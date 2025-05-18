@@ -1,0 +1,14 @@
+E:\Dotnettest\Myapp\bin\Debug\net8.0\Myapp.exe
+E:\Dotnettest\Myapp\bin\Debug\net8.0\Myapp.deps.json
+E:\Dotnettest\Myapp\bin\Debug\net8.0\Myapp.runtimeconfig.json
+E:\Dotnettest\Myapp\bin\Debug\net8.0\Myapp.dll
+E:\Dotnettest\Myapp\bin\Debug\net8.0\Myapp.pdb
+E:\Dotnettest\Myapp\obj\Debug\net8.0\Myapp.GeneratedMSBuildEditorConfig.editorconfig
+E:\Dotnettest\Myapp\obj\Debug\net8.0\Myapp.AssemblyInfoInputs.cache
+E:\Dotnettest\Myapp\obj\Debug\net8.0\Myapp.AssemblyInfo.cs
+E:\Dotnettest\Myapp\obj\Debug\net8.0\Myapp.csproj.CoreCompileInputs.cache
+E:\Dotnettest\Myapp\obj\Debug\net8.0\Myapp.dll
+E:\Dotnettest\Myapp\obj\Debug\net8.0\refint\Myapp.dll
+E:\Dotnettest\Myapp\obj\Debug\net8.0\Myapp.pdb
+E:\Dotnettest\Myapp\obj\Debug\net8.0\Myapp.genruntimeconfig.cache
+E:\Dotnettest\Myapp\obj\Debug\net8.0\ref\Myapp.dll

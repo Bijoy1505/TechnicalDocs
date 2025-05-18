@@ -1,0 +1,102 @@
+//voilation of Single responsibility principle as order class is also handling receipt generation and notification to customer. 
+
+// public class Order 
+//     {
+//         public List<OrderItem> Items { get; private set; } = new List<OrderItem>();
+//         public Customer Customer { get; set; }
+//         public double CalculateOrderAmount()
+//         {
+//             return Items.Sum(item => item.Price);
+//         }
+//         public string GenerateReceipt()
+//         {
+//             // Logic to generate a receipt for the order
+//             return $"Receipt for {Customer.Name}: Total - {CalculateOrderAmount()}";
+//         }
+//         public void NotifyCustomer()
+//         {
+//             // Send an email to the customer with the order details
+//         }
+//     }
+//     public class OrderItem
+//     {
+//         public string ProductName { get; set; }
+//         public double Price { get; set; }
+//     }
+//     public class Customer
+//     {
+//         public string Name { get; set; }
+//         public string Email { get; set; }
+//     }
+
+
+
+
+//SOLUTION:  Above classes can be restructured as below
+
+public class OrderItem
+    {
+        public string ProductName { get; set; }
+        public double Price { get; set; }
+    }
+    public class Customer
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+    }
+    public class Order
+    {
+        public List<OrderItem> Items { get; set; } = new List<OrderItem>();
+        public Customer Customer { get; set; }
+        public double CalculateOrderAmount()
+        {
+            return Items.Sum(item => item.Price);
+        }
+    }
+    public class ReceiptGenerator
+    {
+        public string GenerateReceipt(Order order)
+        {
+            // Logic to generate a receipt based on the given order
+            return $"Receipt for {order.Customer.Name}: Total - {order.CalculateOrderAmount()}";
+        }
+    }
+    public class CustomerNotifier
+    {
+        public void NotifyCustomer(Order order)
+        {
+            // Logic to notify the customer about their order
+            Console.WriteLine("Notification Sent to Customer");
+        }
+    }
+    
+    //Testing the Single Responsibility Principle
+    // public class Program
+    // {
+    //     public static void Main()
+    //     {
+    //         Order newOrder = new Order();
+    //         // Add items to the order
+    //         List<OrderItem> Items = new List<OrderItem>()
+    //         {
+    //             new OrderItem(){ProductName = "Laptop", Price = 10000},
+    //             new OrderItem(){ProductName = "Desktop", Price = 7000},
+    //             new OrderItem(){ProductName = "Tab", Price = 3000}
+    //         };
+    //         newOrder.Items = Items;
+    //         //set the customer...
+    //         Customer customer = new Customer()
+    //         {
+    //             Name = "Pranaya",
+    //             Email = "Pranaya@dotnettutorials.net"
+    //         };
+    //         newOrder.Customer = customer;
+    //         ReceiptGenerator receiptGen = new ReceiptGenerator();
+    //         string receipt = receiptGen.GenerateReceipt(newOrder);
+    //         Console.WriteLine(receipt);
+    //         CustomerNotifier notifier = new CustomerNotifier();
+    //         notifier.NotifyCustomer(newOrder);
+            
+    //         Console.ReadKey();
+    //     }
+    // }
